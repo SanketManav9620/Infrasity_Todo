@@ -50,7 +50,7 @@ async function runTests() {
   // 1. Health Check
   const healthRes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: '/api/health',
     method: 'GET',
   });
@@ -60,7 +60,7 @@ async function runTests() {
   // 2. Reject note access without token
   const unauthRes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: '/api/notes',
     method: 'GET',
   });
@@ -71,7 +71,7 @@ async function runTests() {
   const regARes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: '/api/auth/register',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -86,7 +86,7 @@ async function runTests() {
   const dupRegRes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: '/api/auth/register',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -100,7 +100,7 @@ async function runTests() {
   const loginARes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: '/api/auth/login',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -114,7 +114,7 @@ async function runTests() {
   const regBRes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: '/api/auth/register',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -128,7 +128,7 @@ async function runTests() {
   const createNoteRes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: '/api/notes',
       method: 'POST',
       headers: {
@@ -150,7 +150,7 @@ async function runTests() {
   // 8. User A gets notes (should contain 1 note)
   const getNotesARes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: '/api/notes',
     method: 'GET',
     headers: { Authorization: `Bearer ${tokenA}` },
@@ -161,7 +161,7 @@ async function runTests() {
   // 9. User B must NOT see User A's note in list
   const getNotesBRes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: '/api/notes',
     method: 'GET',
     headers: { Authorization: `Bearer ${tokenB}` },
@@ -172,7 +172,7 @@ async function runTests() {
   // 10. User B must NOT access User A's note directly by ID
   const directAccessRes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: `/api/notes/${noteAId}`,
     method: 'GET',
     headers: { Authorization: `Bearer ${tokenB}` },
@@ -184,7 +184,7 @@ async function runTests() {
   const updateBRes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: `/api/notes/${noteAId}`,
       method: 'PUT',
       headers: {
@@ -200,7 +200,7 @@ async function runTests() {
   // 12. User B must NOT delete User A's note
   const deleteBRes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: `/api/notes/${noteAId}`,
     method: 'DELETE',
     headers: { Authorization: `Bearer ${tokenB}` },
@@ -212,7 +212,7 @@ async function runTests() {
   const updateARes = await request(
     {
       hostname: 'localhost',
-      port: 5000,
+      port: PORT,
       path: `/api/notes/${noteAId}`,
       method: 'PUT',
       headers: {
@@ -230,7 +230,7 @@ async function runTests() {
   // 14. User A deletes note
   const deleteARes = await request({
     hostname: 'localhost',
-    port: 5000,
+    port: PORT,
     path: `/api/notes/${noteAId}`,
     method: 'DELETE',
     headers: { Authorization: `Bearer ${tokenA}` },
