@@ -6,8 +6,8 @@ A clean, responsive, and secure full-stack Note-Taking application built with th
 
 ## 🔗 Submission Links
 
-- **GitHub Repository**: `https://github.com/<your-username>/mern-note-taking-app` *(replace with your repo URL upon push)*
-- **Live Hosted Application**: `https://burgundynotes.onrender.com` *(see [Deployment Guide](#-deployment-guide) below)*
+- **GitHub Repository**: [https://github.com/SanketManav9620/Infrasity_Todo](https://github.com/SanketManav9620/Infrasity_Todo)
+- **Live Hosted Application**: `https://burgundynotes.vercel.app` *(see [Deployment Guide](#-deployment-guide) below)*
 
 ---
 
