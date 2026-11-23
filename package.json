@@ -1,0 +1,24 @@
+{
+  "name": "mern-note-taking-app",
+  "version": "1.0.0",
+  "description": "Full-stack MERN Note Taking Application with Authentication & White-Burgundy Theme",
+  "main": "Backend/server.js",
+  "scripts": {
+    "server": "npm run dev --prefix Backend",
+    "client": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "test:backend": "node Backend/test-api.js",
+    "start": "node Backend/server.js"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express",
+    "notes-app",
+    "jwt-auth"
+  ],
+  "author": "",
+  "license": "MIT"
+}
